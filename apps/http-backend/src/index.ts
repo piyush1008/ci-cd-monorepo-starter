@@ -18,6 +18,12 @@ import { prismaclient } from "@repo/db/index";
 app.use(express.json());
 app.use(cors());
 
+app.get("/",(req,res)=>{
+    return res.json({
+        message: "server is running"
+    })
+})
+
 
 app.post("/signup",async(req,res)=>{
     try {

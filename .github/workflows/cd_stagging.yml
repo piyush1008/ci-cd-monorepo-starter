@@ -22,6 +22,9 @@ jobs:
           cd /home/ubuntu/ci-cd-monorepo-starter/
           git checkout dev &&
           git pull &&
-          pnpm install
-          
+          pnpm install &&
+          pm2 restart fes &&
+          pm2 restart http-server &&
+          pm2 restart ws-server
+
           '
