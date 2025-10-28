@@ -23,6 +23,7 @@ jobs:
           git checkout dev &&
           git pull &&
           pnpm install &&
+          pnpm run build &&
           pm2 restart fes &&
           pm2 restart http-server &&
           pm2 restart ws-server
