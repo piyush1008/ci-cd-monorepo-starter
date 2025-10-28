@@ -1,0 +1,26 @@
+name: Deploy
+
+on:
+   push:
+    branches: [ dev ]
+
+jobs:
+   deploy:
+    name: deploy to EC2
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Build and deploy
+        env: 
+            PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
+            HOSTNAME: ${{ secrets.SSH_HOST }}
+            USER_NAME: ${{ secrets.USER_NAME }}
+        run: |
+          echo "$PRIVATE_KEY" > private_key && chmod 600 private_key
+          ssh -o StrictHostKeyChecking=no -i private_key ${USER_NAME}@${HOSTNAME} '
+          cd /home/ubuntu/ci-cd-monorepo-starter/
+          git checkout dev &&
+          git pull &&
+          pnpm install
+          '
