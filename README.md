@@ -9,7 +9,9 @@ Run the following command:
 ```sh
 npx create-turbo@latest
 ```
-
+8000- http
+3000- fe
+8081- ws
 ## What's inside?
 
 This Turborepo includes the following packages/apps:
