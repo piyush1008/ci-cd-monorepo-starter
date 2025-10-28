@@ -10,7 +10,7 @@ export default function Home(){
   return(
     <div className="flex w-screen h-screen justify-center items-center">
       <div>
-        hello
+        hello there
         <input className="border-1 rounded-xl p-1" value={roomId} onChange={(e)=>{
             setRoomId(e.target.value)
         }} type="text" placeholder="Room id"></input>
