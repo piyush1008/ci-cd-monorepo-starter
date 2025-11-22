@@ -3,7 +3,7 @@ name: Deploy
 on:
    push:
     branches: [ dev ]
-    
+
 jobs:
    deploy:
     name: deploy to EC2
@@ -20,7 +20,6 @@ jobs:
           echo "$PRIVATE_KEY" > private_key && chmod 600 private_key
           ssh -o StrictHostKeyChecking=no -i private_key ${USER_NAME}@${HOSTNAME} '
           if [ ! -d "ci-cd-monorepo-starter" ]; then git clone https://github.com/piyush1008/ci-cd-monorepo-starter.git; fi &&
-          npm install -g pnpm &&
           cd ci-cd-monorepo-starter/ &&
           git checkout dev &&
           git pull &&
