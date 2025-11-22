@@ -144,7 +144,7 @@ app.post("/signin",async(req,res)=>{
         })
     }
 })
-
+//create the room
 app.post("/room",authMiddleware,async(req,res)=>{
     try {
         const parsedata=createRoomSchema.safeParse(req.body);
@@ -205,6 +205,8 @@ app.get("/chats/:roomId",authMiddleware,async(req,res)=>{
     }
 })
 
+
+//get the roomid 
 app.get("/room/:slug",authMiddleware,async(req,res)=>{
     try {
         const slug=req.params.slug

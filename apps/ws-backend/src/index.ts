@@ -42,6 +42,10 @@ wss.on("connection",(ws,request)=>{
     }
     const queryParams=new URLSearchParams(url?.split('?')[1]);
     const token=queryParams?.get('token');
+
+
+    // const params=new URLSearchParams(url?.split("?")[1]);
+    // const token=params.get("token")
     console.log("hii there token", token)
     if(!token){
         ws.close();
@@ -82,7 +86,7 @@ wss.on("connection",(ws,request)=>{
             user?.rooms.push(parsedData.roomId)
         }
 
-         if (parsedData.type==="leave_room")
+         if (parsedData.type==="leave_room")   //{type:"leave_room",roomId:1}
         {
             const user=users.find(x=> x.ws===ws);
             if(!user)

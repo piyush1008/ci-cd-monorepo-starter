@@ -1,3 +1,5 @@
+Main Configuration File: /etc/nginx/nginx.conf
+
 events {
     # Event directives...
 }
