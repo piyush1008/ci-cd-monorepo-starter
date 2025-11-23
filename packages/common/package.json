@@ -2,12 +2,7 @@
   "name": "@repo/common",
   "version": "1.0.0",
   "main": "./dist/types.js",
-  "types": "./dist/types.d.ts",
   "exports": {
-    "./types": {
-      "types": "./dist/types.d.ts",
-      "default": "./dist/types.js"
-    },
     "./*": "./dist/*.js"
   },
   "scripts": {
