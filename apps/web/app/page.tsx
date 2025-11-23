@@ -18,6 +18,8 @@ export default function Home(){
         <button className="border-1 rounded-xl p-1 hover:bg-gray-500" onClick={()=>{
             router.push("/room/"+roomId)
         }}>Join Room</button>
+
+        Hii piyush
       </div>
     </div>
   )
